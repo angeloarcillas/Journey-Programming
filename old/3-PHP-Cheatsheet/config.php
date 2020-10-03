@@ -17,6 +17,6 @@ return [
     'database' =>[
         'foo' => 'foofoo',
         'bar' => 'barbar',
-        'foobar' => "barfoo";
+        'foobar' => 'barfoo'
     ]
 ];

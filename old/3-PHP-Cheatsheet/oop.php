@@ -57,15 +57,15 @@ public function __debugInfo()
 
 /**
  * Final keyword
- *  
+ *
  * Prevent overriding
- */ 
+ */
 final class Foo {} // cannot extend
 final public function foo() {} // cannot override
 
 /**
  * ABSTRACT
- * 
+ *
  * cannot create object
  */
 abstract class Foo
@@ -93,7 +93,7 @@ echo $object->prop; // from abstract constructor
 
 /**
  * INTERFACE
- * 
+ *
  * Not a class
  * can declare only constant variable
  */
@@ -134,7 +134,7 @@ echo Foobar::Z;
 
 /**
  * TRAIT
- * 
+ *
  * Not a class
  * Contract between itself and class that impletements interface
  * similar to include() function
