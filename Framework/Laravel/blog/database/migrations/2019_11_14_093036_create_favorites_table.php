@@ -15,10 +15,10 @@ class CreateFavoritesTable extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             //pivot table
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('question_id');
-            $table->timestamps();
             $table->unique(['user_id', 'question_id']);
+            $table->foreignId('user_id');
+            $table->foreignId('question_id');
+            $table->timestamps();
 
         });
     }

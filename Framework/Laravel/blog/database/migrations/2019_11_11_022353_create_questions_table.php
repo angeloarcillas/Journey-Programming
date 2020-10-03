@@ -15,21 +15,13 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreignId('user_id')->cascadeOnDelete();
             $table->string('title');
-            $table->string('slug')->unique(); // slug -> url
+            $table->string('slug')->unique();
             $table->text('body');
-            $table->unsignedBigInteger('views')->default(0);
-            $table->unsignedBigInteger('answers')->default(0);
-            $table->bigInteger('votes')->default(0);
-            $table->unsignedBigInteger('best_answer_id')->nullable();
-
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('views_count')->default(0);
+            $table->foreignId('best_answer_id')->constrained('answers')->onDelete('SET NULL');
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
         });
     }
 

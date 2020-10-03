@@ -11,26 +11,26 @@
 |
  */
 
-Route::get('/', 'QuestionsController@index');
-Route::get('/sass', function() {
-    return view('sass');
-});
+// Route::get('/', 'QuestionsController@index');
+// Route::get('/sass', function() {
+//     return view('sass');
+// });
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
 
-// [ QUESTION ]
-Route::resource('questions', 'QuestionsController')->except('show');
-Route::get('/questions/{slug}', 'QuestionsController@show')->name('questions.show');
+// // [ QUESTION ]
+// Route::resource('questions', 'QuestionsController')->except('show');
+// Route::get('/questions/{slug}', 'QuestionsController@show')->name('questions.show');
 
-// [ ANSWER ]
-Route::resource('questions.answers', 'AnswerController')->except('index', 'create', 'show');
-Route::post('/answers/{answer}/accept', 'AcceptAnswerController')->name('answers.accept');
+// // [ ANSWER ]
+// Route::resource('questions.answers', 'AnswerController')->except('index', 'create', 'show');
+// Route::post('/answers/{answer}/accept', 'AcceptAnswerController')->name('answers.accept');
 
-// [ FAVORITE ]
-Route::post('/questions/{question}/favorites', 'FavoriteController@store')->name('questions.favotite');
-Route::delete('/questions/{question}/favorites', 'FavoriteController@destroy')->name('questions.unfavotite');
+// // [ FAVORITE ]
+// Route::post('/questions/{question}/favorites', 'FavoriteController@store')->name('questions.favotite');
+// Route::delete('/questions/{question}/favorites', 'FavoriteController@destroy')->name('questions.unfavotite');
 
-// [ VOTE ]
-Route::post('/questions/{question}/vote', 'VoteQuestionController');
-Route::post('/answers/{answer}/vote', 'VoteAnswerController');
+// // [ VOTE ]
+// Route::post('/questions/{question}/vote', 'VoteQuestionController');
+// Route::post('/answers/{answer}/vote', 'VoteAnswerController');
