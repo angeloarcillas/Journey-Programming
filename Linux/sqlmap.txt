@@ -1,7 +1,0 @@
-sqlmap -u "​url​" -DBS
-
-sqlmap -u "​url​" -table -D [database]
-
-sqlmap -u "​url​" -columns -D [database] -T [table]
-
-sqlmap -u "​url​" -dump -D [database] -T [table]
