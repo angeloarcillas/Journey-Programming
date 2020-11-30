@@ -2,6 +2,8 @@
  * Staggered animation
  */
 
+/* index.html
+
 <div class="container">
   <input type="checkbox" name="menu" id="menu" class="menu-toggler">
   <label for="menu" class="menu-toggler-label">Menu</label>
@@ -13,6 +15,7 @@
     <li style="--i: 4">About</li>
   </ul>
 </div>
+*/
 
 
 .container {

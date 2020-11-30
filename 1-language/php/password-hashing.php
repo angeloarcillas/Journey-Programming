@@ -1,6 +1,6 @@
 <?php
 
-function hashPasswd($password)
+function hashPasswd(string $password)
 {
   // Hash password
   $hashed = password_hash($password,PASSWORD_DEFAULT);

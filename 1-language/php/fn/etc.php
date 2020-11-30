@@ -1,6 +1,4 @@
 <?php
-
-
 function reject($items, $func)
 {
   return array_values(array_diff($items, array_filter($items, $func)));
