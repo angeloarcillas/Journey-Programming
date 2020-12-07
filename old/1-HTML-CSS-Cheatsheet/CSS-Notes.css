@@ -1,29 +1,3 @@
-CSS -Cascading Stylesheet
-
-=================SELECTOR=================
--https://www.w3schools.com/css/css_combinators.asp
-
-* -> all
-p -> element
-.name -> class
-#name -> id
-div#name -> id selector | div.name -> class selector
-div p -> descendant selector (space)
-div > p ->  child selector (>)
-div + p -> adjacent sibling selector (+)
-div ~ p -> general sibling selector (~)
-
-[ Attribute]
-[attr] { property: value; } -> select element
-[attr*="value"] -> select all elements with  value
-[attr='value'] { property: value; } -> select elements with specific value
-[attr^='val'] { property: value; } -> select elements whose attribute value starts with a specified value
-[attr$='ue'] { property: value; } -> select elements whose attribute value ends with a specified value
-[attr~='foo'] { property: value; } -> select elements with an attribute value containing a specified word
-[attr|='en'] { property: value; } ->  select elements with the specified attribute starting with the specified value + hyphen (-) foo-bar
-
-[ Pseudo Element/Class] -https://www.w3schools.com/css/css_pseudo_classes.asp
-
 [ Class ]
 :hover -> mouse over
 :link -> unvisited link
@@ -47,33 +21,6 @@ div ~ p -> general sibling selector (~)
 ::first-line -> change 1st line
 ::first-letter -> change 1st letter
 ::selection -> hightlighted
-
-
-=========VARIABLES================
--https://www.w3schools.com/css/css3_variables.asp
-
-:root {  ->highest element
---textColor: #ccc; -> create var
-}
-.class {
- color: var(--textColor); -> assign var
---text-size:14px; -> create child var // usable by child only
-}
-.class p {
-font-size: var(--text-size); -> assign var to child element
-}
-
-=============PREFIX==============
--webkit-sticky -> target certain browser using webkit
--o -> target opera
--moz -> target mozila
-
-============SIZE=============
-width | height | max-width | max-height
-margin -> change margin | padding -> change padding
-	-1px -> all side
-	-1px 2px -> top/bot left/right
-	-1px 2px 1px -> top left/right bot
 
 calc() -> calculate width/height
 [calc(100vh - 100px)] / [calc(100vw - 100px)] -> view hieght/width

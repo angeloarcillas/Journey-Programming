@@ -1,46 +1,92 @@
-<!--------------------
-  - HTML - HyperText Markup Language
-  -
-  - TABLE OF CONTENT
-  - 1. Syntax
-  - 2. Tags
-  -   a. Structural
-  -   b. meta
-  -   c. formatting
-  -   d. list
-  -   e. table
-  -   f. embedded
-  -   g. form
-  - 3. Symbols
-  -------------------->
+# HTML
 
+<details>
+<summary>Starter Template</summary>
+<br>
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-<!--------------------
-  - Syntax
-  -------------------->
-<!DOCTYPE html>                                                           <!-- indicate file is HTML -->
-<html lang="en">                                                          <!-- lang="en" - locale -->
-<head>                                                                    <!-- metadata -->
-  <meta charset="UTF-8">                                                  <!-- tell browser which charset to use -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- user`s visible area -->
-  <title>Document</title>                                                 <!-- Page title -->
-  <meta name="#" content="#">                                             <!-- meta tag -->
-  <link rel="stylesheet" href="#">                                        <!-- include file -->
-  <script src="#" defer="defer"></script>                                 <!-- include script -->
-</head>
-<body>
-  <!-- content -->
-</body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="#">
+
+    <!-- Scripts -->
+    <script src="#" defer="defer"></script>
+  </head>
+
+  <body>
+    <header>
+        <!-- Header -->
+      <nav>
+          <!-- Navigation -->
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- Main Content -->
+      </div>
+    </main>
+
+    <footer>
+        <!-- Footer -->
+    </footer>
+  </body>
 </html>
+```
+</details>
 
 
 
-<!--------------------
-  - Tags - use MDN for more info
-  -------------------->
+## Syntax
 
-<!-- STRUCTURAL -->
+```html
+<!-- Indicate file is HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Metadata -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="#">
+
+    <!-- Script -->
+    <script src="#" defer="defer"></script>
+  </head>
+
+  <body>
+    <!-- Content -->
+  </body>
+</html>
+```
+
+## Basics
+
+```html
+<html lang="en">                          <!-- Set locale -->
+<meta charset="UTF-8">                    <!-- Set encode -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Set user`s visible area -->
+<title>Document</title>                   <!-- Set page title -->
+<link rel="shortcut icon" type="image/png" href="img/logo.png" /> <!-- document logo -->
+<meta name="#" content="#">               <!-- Set metadata -->
+<link rel="stylesheet" href="#">          <!-- include stylesheet -->
+<script src="#" defer="defer"></script>   <!-- include script -->
+<base>                            <!-- define base url for links -->
+```
+
+
+## Structural
+
+```html
 <header>                          <!-- header of document/section -->
 <nav>                             <!-- navigation links -->
 <main>                            <!-- main content -->
@@ -54,17 +100,11 @@
 <hgroup>                          <!-- group headings -->
 <details>                         <!-- collapsable -->
 <summary>                         <!-- summary of <details> -->
+```
 
+## Formatting
 
-<!-- METADATA -->
-<meta>                            <!-- metadata about the document content -->
-<link>                            <!-- include external resource -->
-<title>                           <!-- document title -->
-<base>                            <!-- define base url for links -->
-<!-- <style>                           inline css -->
-
-
-<!-- FORMATTING -->
+```html
 <small>                           <!-- small text -->
 <strong>                          <!-- bold text -->
 <sub>                             <!-- lowered baseline small text -->
@@ -90,9 +130,11 @@
 <wbr>                             <!-- word break opportunity -->
 <dialog>                          <!-- interactive component -->
 <time>                            <!-- time/date -->
+```
 
+## List
 
-<!-- LIST -->
+```html
 <ul>                              <!-- unordered list -->
 <ol>                              <!-- ordered list -->
 <li>                              <!-- list item -->
@@ -100,9 +142,11 @@
 <dt>                              <!-- description term -->
 <dd>                              <!-- description definition -->
 <menu>                            <!-- list of command -->
+```
 
+## Table
 
-<!-- TABLE -->
+```html
 <table>                           <!-- tabular data -->
 <thead>                           <!-- head of column -->
 <th>                              <!-- header cell -->
@@ -113,9 +157,11 @@
 <tbody>                           <!-- table body -->
 <td>                              <!-- table data -->
 <tfoot>                           <!-- table footer -->
+```
 
+## Embedded
 
-<!-- EMBEDDED -->
+```html
 <map>                             <!-- define image map -->
 <area>                            <!-- define a specific spot on <map> -->
 <audio>                           <!-- embed sound -->
@@ -129,9 +175,11 @@
 <object>                          <!-- container for external resource -->
 <param>                           <!-- parameters for <object> -->
 <source>                          <!-- alternative src="" -->
+```
 
+## Form
 
-<!-- FORM -->
+```html
 <form>                            <!-- form for user input -->
 <fieldset>                        <!-- set of related form fields -->
 <legend>                          <!-- fieldset title -->
@@ -145,13 +193,12 @@
 <meter>                           <!-- scalar value within a know range -->
 <progress>                        <!-- progress bar -->
 <button>                          <!-- clickable button -->
+```
 
 
+## Symbol
 
-<!--------------------
-  - Symbol
-  -------------------->
-
+```html
 %7C                               <!-- pipe on url -->
 &lt;                              <!-- < -->
 &gt;                              <!-- > -->
@@ -161,3 +208,22 @@
 &amp;                             <!-- & -->
 &quot;                            <!-- " -->
 &apos;                            <!-- ' -->
+```
+
+## Etc
+
+```html
+<!-- if script is unsupported/disabled -->
+<noscript>Script is unavailable</noscript>
+
+<!-- Target IE 8 and lower -->
+<!--[if lt IE 9]>
+  do something
+<![endif]-->
+
+<!-- Refresh every 30 seconds -->
+<meta http-equiv="refresh" content="30" url="#">
+
+<!-- use latest rendering engine -->
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+```
