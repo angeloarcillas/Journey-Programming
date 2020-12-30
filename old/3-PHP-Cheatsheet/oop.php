@@ -60,70 +60,75 @@ public function __debugInfo()
  *
  * Prevent overriding
  */
-final class Foo {} // cannot extend
-final public function foo() {} // cannot override
+final class A {} // cannot extend
+final public function speak() {} // cannot override
 
 /**
  * ABSTRACT
  *
- * cannot create object
+ * cannot be instantiated
+ * Mixed of normal class & interface
  */
-abstract class Foo
+abstract class A
 {
   public $prop;
 
   public function __construct() {
-    $this->prop = 'string';
+    $this->prop = 'Hello';
   }
 
-  abstract function functionName(); // abstract function - non-defined method
+  // abstract function - non-defined method
+  abstract function speak();
 }
 
-class Bar extends Foo
+class B extends A
 {
-  public function functionName() // overide abstract function
+  // implement speak function
+  // can be public or protected
+  public function speak()
   {
-    echo "Abstract string";
+    echo "Speaking...";
   }
 }
 
-$object = new Bar();
-$object->functionName();
-echo $object->prop; // from abstract constructor
+$obj = new B();
+$obj->speak(); // Speaking...
+echo $obj->prop; // Hello
 
 /**
  * INTERFACE
  *
  * Not a class
+ * A blueprint;
  * can declare only constant variable
  */
 interface FooInterface
 {
-  const X = 'string';
-  function functionX();
+  const X = 'speakFoo';
+  function speakX();
 }
 interface BarInterface
 {
-  const Y = 'string';
-  function functionY();
+  const Y = 'speakBar';
+  function speakY();
 }
 interface FooBarInterface
 {
-  const Z = 'string';
-  const X = 'string';
-  const Y = 'string';
-  function functionZ();
+  const Z = 'speakFoobar';
+  const X = 'speakFoobar';
+  const Y = 'speakFoobar';
+  function speakZ();
 }
 
 
 
 class Foobar implements FooInterface, BarInterface, FooBarInterface
 {
-  function functionX(){
+  function speakX(){
   }
-  function functionY(){
+  function speakY(){
   }
-  function functionZ(){
+  function speakZ(){
   }
 }
 
@@ -155,3 +160,92 @@ class Foo implements FooInterface
 
 $object = new Foo();
 echo $object->functionName();
+
+
+/* BETTER
+
+
+**Interface**
+- not a class
+- blueprint for class
+- cannot define methods
+- can declare constant variable only
+```php
+interface A
+{
+  const FOO = 123;
+  pulic function required($a, $b, $c);
+}
+
+class B implements A
+{
+  public function required($a, $b, $c) {
+    // code...
+  }
+}
+
+$obj = new B();
+$obj->required();
+$obj::FOO; // 123
+```
+
+**Abstract Class and Method**
+- cannot be instantiated
+- mixed of normal class & interface
+```php
+abstract class A
+{
+  public $prop;
+
+  public function __construct() {
+    $this->prop = 'Hello';
+  }
+
+  // abstract function - non-defined method
+  abstract function speak();
+  public function walk() {}
+}
+
+class B extends A
+{
+  // implement speak function
+  // can be public or protected
+  public function speak()
+  {
+    echo "Speaking...";
+  }
+}
+
+$obj = new B();
+$obj->speak(); // Speaking...
+$obj->walk();
+echo $obj->prop; // Hello
+```
+
+**Final Class and Method**
+- prevent overriding
+```php
+final class A {} // cannot extend
+final public function speak() {} // cannot override
+```
+
+**Traiit**
+- not a class
+- group of methods
+```php
+trait A
+{
+ public function speak() {}
+ public function walk() {}
+}
+
+class B
+{
+
+  use A; // inherit trait A methods
+}
+
+$obj = new B();
+$obj->speak();
+$obj->walk();
+```
