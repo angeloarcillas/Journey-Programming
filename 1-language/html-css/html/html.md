@@ -46,14 +46,16 @@
 ## Syntax
 
 ```html
-<!-- Indicate file is HTML -->
+<!-- Define file is HTML -->
 <!DOCTYPE html>
+<!-- desribe an HTML document -->
 <html lang="en">
 
-  <!-- Metadata -->
+  <!-- Information about the document -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title of the document -->
     <title>Document</title>
 
     <!-- Stylesheet -->
@@ -63,6 +65,7 @@
     <script src="#" defer="defer"></script>
   </head>
 
+<!-- visible page content -->
   <body>
     <!-- Content -->
   </body>
