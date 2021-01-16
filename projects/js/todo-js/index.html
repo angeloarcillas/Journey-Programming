@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-list-js</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    />
+
+    <script src="main.js" defer></script>
+  </head>
+
+  <style>
+    * {
+      font-family: "Inter", sans-serif;
+    }
+
+    li {
+      user-select: none;
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <div class="p-12">
+      <div class="w-full max-w-xl mx-auto">
+
+        <div class="bg-red-400 p-12 rounded-t-lg">
+          <h2 class="mb-2 text-center text-4xl font-bold text-white">
+            My To Do List
+          </h2>
+
+          <div class="flex">
+            <input type="text" placeholder="Do something..."
+              class="h-12 flex-1 p-2 px-4 text-lg rounded-l input"
+              onkeypress="createTodoUsingEnter(event)"
+            />
+            <button onclick="createTodo()"
+              class="uppercase text-white border-2 border-white px-16 rounded-r"
+            >Add</button>
+          </div>
+        </div>
+
+        <ul id="target">
+          <li class="border p-4 flex justify-between">
+            <span>parturient montes, nascetur ridiculus mus.</span>
+          </li>
+          <li class="border p-4 flex justify-between">
+            <span>Donec sit amet varius sapien.</span>
+          </li>
+          <li class="border p-4 flex justify-between">
+            <span>Integer convallis sodales nunc vitae placerat.</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</html>

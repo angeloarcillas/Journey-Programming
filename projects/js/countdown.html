@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Year Coundown</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Xanh+Mono&display=swap" rel="stylesheet">
+  </head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #4c4c4c;
+    }
+    .parent {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      height: 30vh;
+      font-family: 'Space Mono', monospace;
+      background-color: #f1f1f1;
+      border-radius: 25px;
+      padding: 5rem;
+      box-shadow: -5px 5px 10px #f1f1f1;
+    }
+
+    .parent span {
+      font-size: 5rem;
+      margin: 0 30px;
+    }
+    .parent .label {
+      font-size: 1.2rem;
+        margin-bottom: -20px;
+      font-family: 'Xanh Mono', monospace;
+    }
+
+    .parent .number {
+      font-size: 5rem;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+            <div class="parent">
+                <div>
+                    <p class="label">Days</p>
+                    <p class="number days">000</p>
+                </div>
+                <span>:</span>
+                <div>
+                    <p class="label">Hours</p>
+                    <p class="number hours">00</p>
+                </div>
+                <span>:</span>
+                <div>
+                    <p class="label">Minutes</p>
+                    <p class="number minutes">00</p>
+                </div>
+                <span>:</span>
+                <div>
+                    <p class="label">Seconds</p>
+                    <p class="number seconds">00</p>
+                </div>
+            </div>
+        </div>
+    <script>
+      let countdown = setInterval(() => {
+        let date = new Date();
+        let nextYear = date.getFullYear() + 1;
+        let distance = new Date(`${nextYear}`, 0) - date.getTime();
+
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.querySelector(".days").innerText = twoDigits(days);
+        document.querySelector(".hours").innerText = twoDigits(hours);
+        document.querySelector(".minutes").innerText = twoDigits(minutes);
+        document.querySelector(".seconds").innerText = twoDigits(seconds);
+      }, 1000);
+
+      function twoDigits(key) {
+        return key.toString().length > 1 ? key : `0${key}`;
+      }
+    </script>
+  </body>
+</html>
