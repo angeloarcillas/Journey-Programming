@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>alpine.js</title>
 
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
@@ -23,9 +23,11 @@
     </div>
 
     <script>
-      // create object named Alpine
+
+      // create an object named Alpine
       window.Alpine = {
-        // create directies
+
+        // create a directies
         directives: {
           "x-text": (el, value) => {
             el.innerText = value;
@@ -39,7 +41,7 @@
         start() {
           this.root = document.querySelector("[x-data]"); // select x-data attribute
           this.rawData = this.getInitialData(); // Get user defined property
-          this.data = this.observe(this.rawData); //
+          this.data = this.observe(this.rawData); // run observer
           this.registerListeners(); // register event listeners
           this.refreshDom(); // refresh DOM (reactive)
         },
