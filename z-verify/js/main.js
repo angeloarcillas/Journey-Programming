@@ -107,6 +107,9 @@ if (true) {
   // execute if conditions fail
 }
 
+if (true) "true";
+else "false";
+
 true ? "true" : "false"; // ternary operator
 
 /**
@@ -155,3 +158,26 @@ switch (key) {
     // code...
     break;
 }
+
+/**
+ * Functions
+ */
+
+function greet(name = "John") {
+  let time = "Morning";
+  console.log(`Good ${time}!, ${name}`); // Good Morning!, Doe
+}
+
+greet("Doe");
+function func(){} // function declaration
+let func = function (){} // function expression
+
+// arrow function
+let func = () => "expression";
+
+// multi-line arrow function
+let func = () => {
+  return "multi-line";
+}
+
+debugger; // pause the code
