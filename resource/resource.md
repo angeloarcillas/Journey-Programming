@@ -95,3 +95,4 @@
 - [Roadmaps](https://roadmap.sh/)
 - [web technology](https://developer.mozilla.org/en-US/docs/Web)
 - [Coding horrors](https://blog.codinghorror.com/understanding-model-view-controller/)
+- [web optimization](https://web.dev/fast/#optimize-your-javascript)
