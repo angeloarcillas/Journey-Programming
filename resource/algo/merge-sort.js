@@ -1,32 +1,40 @@
-function mergeSort(array) {
-  const half = array.length / 2
+// TODO: debug
+function mergeSort(unsorted) {
+  // get half of unsorted array
+  // round up the number
+  const half = Math.ceil(unsorted.length / 2);
 
-  // Base case or terminating case
-  if(array.length < 2){
-    return array
-  }
+  // if only 1 return
+  if (unsorted.length < 2) return unsorted;
 
-  const left = array.splice(0, half)
-  return merge(mergeSort(left),mergeSort(array))
+  // recursive sort
+  return merge(
+    mergeSort(unsorted.splice(0, half)), // left
+    mergeSort(unsorted) // right
+  );
 }
-
-
-// mergeSort([1, 3, 5, 7, 9, 0, 2, 4, 6, 8]);
-console.log(mergeSort([1, 3, 5, 7, 9, 0, 2, 4, 6, 8]));
 
 function merge(left, right) {
-    let arr = []
-    // Break out of loop if any one of the array gets empty
-    while (left.length && right.length) {
-        // Pick the smaller among the smallest element of left and right sub arrays
-        if (left[0] < right[0]) {
-            arr.push(left.shift())
-        } else {
-            arr.push(right.shift())
-        }
-    }
+  // array holder
+  let sorted = [];
 
-    // Concatenating the leftover elements
-    // (in case we didn't go through the entire left or right array)
-    return [ ...arr, ...left, ...right ]
+  // if left or right array is empty then return
+  while (left.length && right.length) {
+
+    // pick smallest element of left and right sub arrays
+    if (left[0] < right[0]) {
+      // less
+      sorted.push(left.shift());
+
+    } else {
+      // greater
+      sorted.push(right.shift());
+    }
+  }
+
+  //concat leftover elements
+  return [...sorted, ...left, ...right];
 }
+
+mergeSort([1, 3, -5, 7, 9, 0, -2, 4, 6, -8]);
+// console.log(mergeSort([1, 3, -5, 7, 9, 0, -2, 4, 6, -8]));
