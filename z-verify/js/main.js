@@ -173,6 +173,10 @@ function func() {} // function declaration
 let func = function () {}; // function expression
 
 // arrow function
+// 1. Does not have its own this object.
+// 2. Implicit return value when brackets are omitted.
+// 3. Always an expression, never a statement.
+
 let func = () => "expression";
 
 // multi-line arrow function
@@ -251,7 +255,7 @@ let clone = Object.assign({}, user);
 let user = {
   name: 'John',
   greet() { // object method
-    alert(`Hi! ${this.name}`) // Hi! John | this refers to object name
+    alert(`Hi! ${this.name}`) // Hi! John | `this` refers to object name
   },
 
 }
