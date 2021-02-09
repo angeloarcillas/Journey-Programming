@@ -169,8 +169,8 @@ function greet(name = "John") {
 }
 
 greet("Doe");
-function func(){} // function declaration
-let func = function (){} // function expression
+function func() {} // function declaration
+let func = function () {}; // function expression
 
 // arrow function
 let func = () => "expression";
@@ -178,6 +178,80 @@ let func = () => "expression";
 // multi-line arrow function
 let func = () => {
   return "multi-line";
-}
+};
 
 debugger; // pause the code
+
+/**
+ * Objects
+ */
+
+// used on computed property
+let fruit = prompt("Which fruit to buy?", "apple");
+
+// object
+let user = {
+  name: "John", // key: value
+  age: 30,
+  "last name": "Doe", // multiword key
+  [fruit]: 5, // computed property
+  [fruit + "Fruit"]: 5, // appleFruit
+  sizes: { // object inside an object
+    height: 182,
+    width: 50,
+  },
+  greet() { // method property
+    alert('Hi!');
+  },
+};
+
+console.log(user.name); // John | access property
+console.log(user["last name"]); // Doe | access multiword key
+
+// add property
+user.isAdmin = true;
+
+// remove property
+delete user.age;
+
+console.log("age" in user); // false | check if exists
+
+// property value shorthand
+function makeUser(name, age) {
+  return {
+    name, // same as name: name
+    age, // same as age: age
+  };
+}
+
+for (const key in user) {
+  console.log(key); // name
+  console.log(user[key]); // John
+}
+
+let a = {};
+let b = a; // referenced
+a.age = 1;
+console.log(a === b); // true
+
+let x = 1;
+let y = x;
+x = 2;
+console.log(a === b); // false
+
+// Object.assign(placeholder, ...properties)
+let user = {
+  name: "John",
+};
+
+// add/merge property to placeholder
+let clone = Object.assign({}, user);
+
+// Object methods and this
+let user = {
+  name: 'John',
+  greet() { // object method
+    alert(`Hi! ${this.name}`) // Hi! John | this refers to object name
+  },
+
+}
