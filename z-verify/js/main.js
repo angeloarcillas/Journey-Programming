@@ -172,7 +172,7 @@ greet("Doe");
 function func() {} // function declaration
 let func = function () {}; // function expression
 
-// arrow function
+// Arrow function
 // 1. Does not have its own this object.
 // 2. Implicit return value when brackets are omitted.
 // 3. Always an expression, never a statement.
@@ -207,6 +207,9 @@ let user = {
   greet() { // method property
     alert('Hi!');
   },
+  chain() {
+    return this;  // used for method chaining
+  }
 };
 
 console.log(user.name); // John | access property
