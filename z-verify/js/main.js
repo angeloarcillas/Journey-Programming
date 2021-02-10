@@ -19,9 +19,17 @@ const FOOBAR = null;
 let n = 123; // integer
 n = 12.3; // float
 n = 10n; // BigInt
+n = 123e6; // 123000000 (6 zero's)
+n = 123e6; // 0.000123
+// 0b: binary | 0o: octal | 0x: hexadecimal
+
 n = 1 / 0; // infinity
 n = Infinity;
 n = "str" / 2 + 5; // not a number(NaN)
+
+isFinite(n); // true
+isFinite(Infinity); // false
+isNaN(n); // false
 
 // string
 let s = "Hello World!";
@@ -200,16 +208,18 @@ let user = {
   "last name": "Doe", // multiword key
   [fruit]: 5, // computed property
   [fruit + "Fruit"]: 5, // appleFruit
-  sizes: { // object inside an object
+  sizes: {
+    // object inside an object
     height: 182,
     width: 50,
   },
-  greet() { // method property
-    alert('Hi!');
+  greet() {
+    // method property
+    alert("Hi!");
   },
   chain() {
-    return this;  // used for method chaining
-  }
+    return this; // used for method chaining
+  },
 };
 
 console.log(user.name); // John | access property
@@ -256,9 +266,35 @@ let clone = Object.assign({}, user);
 
 // Object methods and this
 let user = {
-  name: 'John',
-  greet() { // object method
-    alert(`Hi! ${this.name}`) // Hi! John | `this` refers to object name
+  name: "John",
+  greet() {
+    // object method
+    alert(`Hi! ${this.name}`); // Hi! John | `this` refers to object name
   },
+};
 
+// Constructor
+function User(name) {
+  // this = {};  (implicitly)
+
+  this.name = name;
+  this.isAdmin = false;
+
+  // return this;  (implicitly)
+}
+
+let user = new User("John"); // { name: 'John', isAdmin: false }
+
+// optional chaining
+// returns property if obj.prop exists, otherwise undefined.
+obj?.prop;
+obj?.[prop];
+obj.method?.();
+
+// codewars
+function domainName(url) {
+  return url.match(/(?:https?:\/\/)?(?:w{3}\.)?([^\.]+)/i)[1];
+  // /(?:https?:\/\/)? - non-capture - http:// or https:// - 0 or 1
+  // (?:w{3}\.)? - non-capture - www. - 0 or 1
+  // ([^\.]+) - match any except dot(.) - 1 or more
 }
