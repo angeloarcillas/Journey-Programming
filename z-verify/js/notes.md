@@ -1,6 +1,6 @@
 ## Element size and scrolling
 source: [javascript.info](https://javascript.info/size-and-scroll#sample-element)
-<hr>
+
 
 offsetParent
 - is the nearest positioned ancestor or td, th, table, body.
