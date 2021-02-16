@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <style>
+    input {
+      display: block;
+    }
+  </style>
+  <body>
+    <p>
+      outside
+      <span>sub outer</span>
+    </p>
+    <div class="parent">
+      <p>
+        inner 1
+        <span> sub inner</span>
+      </p>
+      <p>inner 2</p>
+    </div>
+    <p>bottom</p>
+    <p>bottom 2</p>
+    <form action="/">
+      <input type="datetime-local" name="date-and-time" />
+      <input type="color" name="car-color" />
+      <input type="date" name="birthday" />
+      <input type="time" name="birthday" />
+      <input type="week" name="birthday" />
+      <input type="month" name="birthday" />
+      <input type="url" name="website" pattern="https://.*" placeholder="url" />
+      <input type="file" name="secret-documents" accept=".jpg, .jpeg, .png" />
+      <input type="tel" pattern="[0-9]{3}-[0-9]{8}" name="telephone-number" />
+      <input type="reset" />
+
+      <select name="color">
+        <optgroup label="Primary">
+          <option value="red">Red</option>
+          <option value="yellow">Yellow</option>
+          <option value="blue">Blue</option>
+        </optgroup>
+        <optgroup label="Others">
+          <option value="green">Green</option>
+          <option value="pink">Pink</option>
+        </optgroup>
+      </select>
+    </form>
+
+    <p aria-label="The description of the product">...</p>
+
+    <h3 id="description">The description of the product</h3>
+    <p aria-labelledby="description">...</p>
+
+    <button aria-describedby="payNowDescription">Pay now</button>
+    <div id="payNowDescription">
+      Clicking the button will send you to our Stripe form!
+    </div>
+
+    <!--
+A table should have a caption tag that describes its content. That tag
+should be put immediately after the opening table tag
+
+The sandbox attribute allows us to limit the operations allowed in the
+iframes.
+
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+
+The tabindex attribute allows you to change the order of how
+pressing the Tab key selects "selectable" elements.
+
+Adding the aria-hidden="true" attribute will tell screen readers to
+ignore that element.
+     -->
+  </body>
+</html>

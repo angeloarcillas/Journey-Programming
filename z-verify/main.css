@@ -1,0 +1,47 @@
+div.parent ~ p {
+  color: green;
+}
+
+.container {
+margin: var(--default-margin, 30px);
+transform: rotateY(20deg) scaleX(3) translateY(100px);
+/* Using the perspective property you can specify how far the 3D object is from the viewer */
+
+}
+
+@supports (display: grid) {
+/* apply this CSS */
+}
+
+
+
+
+/*
+https://specificity.keegan.st/
+https://www.sitepoint.com/css-inheritance-introduction/
+https://www.w3.org/TR/css-color-4/
+
+# attribute selector
+*= checks if the attribute contains the partial
+^= checks if the attribute starts with the partial
+$= checks if the attribute ends with the partial
+|= checks if the attribute starts with the partial and it's followed by a dash (common in classes, for example), or just contains the partial
+~= checks if the partial is contained in the attribute, but separated by spaces from therest
+
+
+element.style.setProperty('--variable-name', 'a-value')
+
+const styles = getComputedStyle(document.documentElement)
+const value = String(styles.getPropertyValue('--variable-name')).trim()
+
+*/
+
+
+
+/* # avoid image cut
+<p>
+  <img>
+</p> */
+p {
+page-break-inside: avoid;
+}
