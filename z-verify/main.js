@@ -15,11 +15,9 @@ const Button = styled.button`
 // apollo template tags
 const query = gql`query { }`;
 
-
 // Destructuring
-const a = [1,2,3,4,5];
+const a = [1, 2, 3, 4, 5];
 const [first, second, , , fifth] = a; // [1,2,5]
-
 
 // for...of - iterates over the property values
 // for...in - iterates the property names
@@ -91,29 +89,79 @@ const doSomething = async () => {
 Promise.all([p1, p2]); // resovle all
 Promise.race([p1, p2]); // resolve 1st finished promise
 
+// // MODULE
+// // uppercase.js
+// export default str => str.toUpperCase();
 
-// MODULE
-// uppercase.js
-export default str => str.toUpperCase();
+// // https://flaviocopes.com/javascript-async-defer/
 
-// https://flaviocopes.com/javascript-async-defer/
+// // main.js
+// import toUpperCase from './uppercase.js';
+// toUpperCase('test'); // TEST
 
-// main.js
-import toUpperCase from './uppercase.js';
-toUpperCase('test'); // TEST
+// // multi-export.js
+// const a = 1;
+// const b = 2;
+// const c = 3;
 
-// multi-export.js
-const a = 1;
-const b = 2;
-const c = 3;
+// export { a, b, c };
 
-export { a, b, c };
+// // main.js
+// import * from './multi-export.js'; // import everything
+// // import { a, b as two, c } from './multi-export.js'; // import a, b rename to two, c
 
-// main.js
-import * from './multi-export.js'; // import everything
-// import { a, b as two, c } from './multi-export.js'; // import a, b rename to two, c
+// // import React, { Component } from'react' // default and named export
 
-// import React, { Component } from'react' // default and named export
+// SET - same as map but set has no key
+const s = new Set();
+s.add("one"); // add an item
+s.delete("one"); // remove an item
+s.has("one"); // check if item exists
+s.size; // number of all items
+s.clear(); // remove all items
+s.keys(); // Set() item keys
+s.values(); // Set() item values
+s.entries(); // convert to iterable
 
+// MAP
+const m = new Map();
+m.set("key", "value"); // add an item
+m.get("key"); // get an item
+m.delete("target"); // delete an item
+m.clear(); // delete all item
+m.has("target"); // check if item exists
+m.size; // number of all items
+m.keys();
+m.values();
+m.entries();
 
-//43
+//
+const person = {
+  name: "John",
+  age: 55,
+};
+
+Object.values(person); // ['john', 55]
+Object.entries(person); // [['name','john'], ['age', 55]]
+
+const doSomethingAsync = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("I did something"), 3000);
+  });
+};
+const doSomething = async () => {
+  console.log(await doSomethingAsync());
+};
+console.log("Before");
+doSomething();
+console.log("After");
+
+// #result
+// Before
+// After
+// I did something
+
+// async iterable object as the loop iteration
+for await (const line of readLines(filePath)) {
+  console.log(line);
+}
