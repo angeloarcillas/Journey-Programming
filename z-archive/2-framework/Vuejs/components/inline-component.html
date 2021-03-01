@@ -1,0 +1,19 @@
+<!-- - add "inline-template" to component tag -->
+
+<progress-view inline-template>
+  <p>Your progress: {{ progress }}%</p>
+</progress-view>
+
+<script>
+  Vue.component("progress-view", {
+    data() {
+      return {
+        progress: 90,
+      };
+    },
+  });
+
+  new Vue({
+    el: "#app",
+  });
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Random string generator
+
+        !NOTE: min special and number only works for password
+      </p>
+
+      <label class="block">Maximum special characters</label>
+      <div class="flex">
+        <input type="range" id="maxSpecials" min="0" max="10" value="7" />
+        <span>7</span>
+      </div>
+
+      <label class="block">Maximum numbers</label>
+      <div class="flex">
+        <input type="range" id="maxNumbers" min="0" max="10" value="7" />
+        <span>7</span>
+      </div>
+
+      <label class="block">Password Length</label>
+      <div class="flex">
+        <input type="range" id="length" min="8" max="255" value="16" />
+        <span>16</span>
+      </div>
+      <input class="block" type="text" id="input" />
+        <div class="flex">
+          <button class="generate" onclick="generate()">Generate</button>
+        <button class="copy" onclick="copy()">Copy</button>
+        </div>
+    </div>
+  </body>
+</html>

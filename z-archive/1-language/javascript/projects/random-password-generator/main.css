@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 50%;
+  margin: 5rem auto;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.block {
+  display: block;
+}
+#input {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem 10px;
+  border: 2px solid #f1f1f1;
+}
+
+.copy {
+  /* height: 35px;
+  padding: 5px 15px; */
+  cursor: pointer;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: 1rem 2rem;
+  border: 2px solid transparent;
+  background: #c4c4c4;
+}
+
+.copy:hover {
+  background: #00b0ff;
+}
+
+.generate {
+  padding: 1rem 2rem;
+  border: 2px solid #00b0ff;
+  color: #00b0ff;
+  cursor: pointer;
+  background: white;
+  font-weight: bold;
+}
+
+.generate:hover {
+  background: #00b0ff;
+  color: #fff;
+}

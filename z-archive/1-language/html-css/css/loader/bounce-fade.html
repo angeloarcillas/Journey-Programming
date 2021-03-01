@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bounce-fade-ball</title>
+  </head>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .bouncing-loader {
+      display: flex;
+      justify-content: center;
+    }
+
+    .bouncing-loader > span {
+      height: 1rem;
+      width: 1rem;
+      margin: 3rem 0.2rem;
+      border-radius: 50%;
+      background: #1e1e1e;
+      animation: bounce-fade .6s infinite;
+    }
+
+    .bouncing-loader > span:nth-child(2) {
+      animation-delay: .2s;
+    }
+
+    .bouncing-loader > span:nth-child(3) {
+      animation-delay: .4s;
+    }
+
+    @keyframes bounce-fade {
+      to {
+        opacity: .1;
+        transform: translate3d(0, -1rem, 0);
+      }
+    }
+  </style>
+
+  <body>
+
+    <div class="bouncing-loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </body>
+</html>

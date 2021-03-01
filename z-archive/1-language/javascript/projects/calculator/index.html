@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <form class="calulator" action="#" name="cal" disabled>
+      <input class="result" type="text" name="res" />
+      <span
+        class="clear"
+        onclick="document.cal.res.value = cal.res.value.slice(0, -1)"
+      >C
+      </span>
+      <span class="clear" onclick="document.cal.res.value = ''">CE</span>
+      <span class="control" onclick="document.cal.res.value += '/'">/</span>
+      <span class="control" onclick="document.cal.res.value += '*'">*</span>
+      <span onclick="document.cal.res.value += '7'">7</span>
+      <span onclick="document.cal.res.value += '8'">8</span>
+      <span onclick="document.cal.res.value += '9'">9</span>
+      <span class="control" onclick="document.cal.res.value += '-'">-</span>
+      <span onclick="document.cal.res.value += '4'">4</span>
+      <span onclick="document.cal.res.value += '5'">5</span>
+      <span onclick="document.cal.res.value += '6'">6</span>
+      <span class="+ control" onclick="document.cal.res.value += '+'">+</span>
+      <span onclick="document.cal.res.value += '3'">3</span>
+      <span onclick="document.cal.res.value += '2'">2</span>
+      <span onclick="document.cal.res.value += '1'">1</span>
+      <span onclick="document.cal.res.value += '0'">0</span>
+      <span onclick="document.cal.res.value += '00'">00</span>
+      <span onclick="document.cal.res.value += '.'">.</span>
+      <span class="="
+        onclick="document.cal.res.value = eval(cal.res.value)"
+      >=
+      </span>
+    </form>
+  </body>
+</html>

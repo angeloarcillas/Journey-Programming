@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine.js</title>
+
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div x-data="{ count: 0 }" class="p-12 flex items-center">
+      <button @mouseenter="count++" class="px-6 py-2 bg-blue-400 rounded">
+        +
+      </button>
+      <button @click="count--" class="px-6 py-2 bg-red-400 rounded mx-4">
+        -
+      </button>
+      <span x-text="count" class="text-4xl"></span>
+      <span x-show="count > 2">More than 2</span>
+    </div>
+
+    <script>
+
+      // create an object named Alpine
+      window.Alpine = {
+
+        // create a directies
+        directives: {
+          "x-text": (el, value) => {
+            el.innerText = value;
+          },
+          "x-show": (el, value) => {
+            el.style.display = value ? "block" : "none";
+          },
+        },
+
+        // initialize
+        start() {
+          this.root = document.querySelector("[x-data]"); // select x-data attribute
+          this.rawData = this.getInitialData(); // Get user defined property
+          this.data = this.observe(this.rawData); // run observer
+          this.registerListeners(); // register event listeners
+          this.refreshDom(); // refresh DOM (reactive)
+        },
+
+        registerListeners() {
+          // DOM walker
+          this.walkDom(this.root, (el) => {
+            // iterate
+            Array.from(el.attributes)
+              // filter attributes with name starts with '@'
+              .filter((attribute) => attribute.name.startsWith("@"))
+              // loop through each attribute
+              .forEach((attribute) => {
+                // remove '@' symbol
+                let event = attribute.name.replace("@", "");
+                // register event listener to element
+                el.addEventListener(event, () => {
+                  // action
+                  eval(`with (this.data) { (${attribute.value}) }`);
+                });
+              });
+          });
+        },
+
+        // read mdn docs (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+        observe(data) {
+          // Alpine object
+          var self = this;
+          return new Proxy(data, {
+            // target: data
+            // key: count
+            // value: 0
+            set(target, key, value) {
+              console.log(target);
+              // update data | data['count'] = 0
+              target[key] = value;
+              // if you use `this` this will return the Proxy not the `Alpine object`
+              self.refreshDom();
+            },
+          });
+        },
+
+        refreshDom() {
+          this.walkDom(this.root, (el) => {
+            Array.from(el.attributes).forEach((attribute) => {
+              // if directive doesnt exist return;
+              if (!this.directives.hasOwnProperty(attribute.name)) return;
+
+              // execute directives
+              this.directives[attribute.name](
+                el,
+                eval(`with (this.data) { (${attribute.value}) }`)
+              );
+            });
+          });
+        },
+
+        // DOWM walker
+        walkDom(el, callback) {
+          callback(el);
+
+          el = el.firstElementChild;
+
+          while (el) {
+            this.walkDom(el, callback);
+
+            el = el.nextElementSibling;
+          }
+        },
+
+        getInitialData() {
+          // x-data="{ count: 1}"
+          let dataString = this.root.getAttribute("x-data");
+          return eval(`(${dataString})`);
+        },
+      };
+
+      window.Alpine.start();
+    </script>
+  </body>
+</html>

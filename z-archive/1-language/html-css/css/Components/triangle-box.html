@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border with triangle top</title>
+  </head>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+      margin-top: 20px;
+    }
+
+    .container:before,
+    .container:after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 19px;
+      border: 11px solid transparent;
+      border-bottom-color: #ddd;
+    }
+
+    .container:after {
+      left: 20px;
+      border: 10px solid transparent;
+      border-bottom-color: #fff;
+    }
+  </style>
+
+  <body>
+
+    <div class="container">
+      Border with top triangle
+    </div>
+
+  </body>
+</html>
