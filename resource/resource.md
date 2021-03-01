@@ -1,4 +1,12 @@
-# HTML & CSS
+# Programming and Other Resources
+
+## Personal
+- [Google Drive](https://drive.google.com/drive/folders/18zLvm4y9ARd51eLxaRrRlIJbV1-vQ0lB?usp=sharing)
+<br>
+<br>
+<br>
+
+## HTML & CSS
 - [learn web development](https://developer.mozilla.org/en-US/docs/Learn)
 - [w3schools](https://www.w3schools.com/)
 - [htmlhead](https://htmlhead.dev/)
@@ -7,7 +15,7 @@
 <br>
 <br>
 
-# Javascript
+## Javascript
 - [Official Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [First Step](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
 - [Javascript for dummies](https://www.digitalocean.com/community/tutorials/javascript-promises-for-dummies)
@@ -17,7 +25,7 @@
 <br>
 <br>
 
-# PHP
+## PHP
 
 - [Official Documentation](https://secure.php.net/manual/en)
 - [Laracasts PHP tutorials](http://laracasts.com)
@@ -28,13 +36,13 @@
   <br>
   <br>
 
-# SQL
+## SQL
 
 <br>
 <br>
 <br>
 
-# Python
+## Python
 - [exercises](https://www.practicepython.org/)
 - [Offical Tutorial](https://docs.python.org/3.9/tutorial/)
 - [automatetheboringstuff](https://automatetheboringstuff.com/)
@@ -45,14 +53,14 @@
 <br>
 <br>
 
-# Rust
+## Rust
 
 - [rustlings: small exercises](https://github.com/rust-lang/rustlings)
   <br>
   <br>
   <br>
 
-# System Administration
+## System Administration
 
 - [linux journey](https://linuxjourney.com/)
   <br>
@@ -60,7 +68,7 @@
   <br>
 
 
-# Cybersecurity
+## Cybersecurity
 - [Owasp](https://owasp.org/)
 - [OveTheWire](https://overthewire.org/wargames/)
 
@@ -68,27 +76,27 @@
 <br>
 <br>
 
-# Coding Challanges
+## Coding Challanges
 - [Codewars](https://www.codewars.com/dashboard)
 - [LeetCode](https://leetcode.com/)
 <br>
 <br>
 <br>
 
-# Clean Code
+## Clean Code
 
 - [refactoring.guru](https://refactoring.guru)
   <br>
   <br>
   <br>
 
-# Data Structures & Algorithms
+## Data Structures & Algorithms
 - [Visual Algorithms](https://visualgo.net/en)
 <br>
 <br>
 <br>
 
-# Other
+## Other
 
 - [git playground](https://learngitbranching.js.org)
 - [learn X in Y minutes](https://learnxinyminutes.com/)

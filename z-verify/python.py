@@ -66,7 +66,7 @@ x or y # 	Returns True if one of the statements is true
 not (x and y) # Reverse the result, returns False if the result is true
 
 #####################
-# Identity Operator
+# Identity Operator;
 #####################
 x is y # false
 x is not y # true
