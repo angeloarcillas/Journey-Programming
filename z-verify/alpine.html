@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlpineJS</title>
+
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+
+  <style>
+    .m-6 {
+      margin: 6rem;
+    }
+
+    .mb-3 {
+      margin-bottom: 3rem;
+    }
+
+    .p-1 {
+      padding: 1rem;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+
+  <!-- x-data: create a data object -->
+  <!-- x-on: listen to an event -->
+  <!-- x-text: innerText -->
+  <!-- x-html: innerHTML -->
+  <body class="m-6">
+    <div x-data="{ count: 0 }" class="mb-3">
+      <h2>x-data, x-on, x-text</h2>
+      <button x-on:click="count++">+</button>
+      <span x-text="count"></span>
+      <button x-on:click="count--">-</button>
+    </div>
+
+    <!-- x-model: bind to x-data -->
+    <!-- x-bind: bind attribute -->
+    <div x-data="{ tweet: 'Say Something!' }" class="mb-3">
+      <h2>x-model, x-bind</h2>
+      <textarea x-model="tweet" class="p-1" cols="30" rows="10"></textarea>
+      <span
+        x-text="tweet.length"
+        x-bind:class="tweet.length > 20 ? 'red': ''"
+      ></span>
+    </div>
+
+    <!-- x-init: init lifecycle -->
+    <!-- x-ref: set reference -->
+    <!-- $el: current element -->
+    <!-- $refs: all references -->
+    <div x-data="{}" x-init="console.log($el,'\n', $refs.input)" class="mb-3">
+      <h2>x-init, x-ref, $el, $refs</h2>
+      <input type="text" x-ref="input" />
+    </div>
+
+    <!-- `.active` if tab === foo -->
+    <div class="mb-3">
+      <h2>condition on class</h2>
+      <button :class="{ 'active': tab === 'foo' }" @click="tab = 'foo'">
+        Foo
+      </button>
+    </div>
+
+    <!-- modal -->
+    <div x-data="{ open: false }" class="mb-3">
+      <h2>Downdown menu</h2>
+      <button @click="open = true">Open Dropdown</button>
+
+      <ul x-show="open" @click.away="open = false">
+        Dropdown Body
+      </ul>
+    </div>
+  </body>
+</html>
