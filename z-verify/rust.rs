@@ -1,6 +1,10 @@
 mod print; // import file
 mod variables;
 mod types;
+mod conditional;
+mod loops;
+mod functions;
+mod pointers;
 mod testing;
 
 fn main () {
@@ -9,6 +13,10 @@ fn main () {
   variables::run();
   types::run();
   tuples::run();
+  conditional::run();
+  loops::run();
+  functions::run();
+  pointers::run();
   testing::run();
 }
 
@@ -126,8 +134,119 @@ pub fn run() {
     person.2
   );
 
+  // VECTORS: resizable array
+  let vec_nums:Vec<i32> = vec![1,2,3,4,5];
+  vec_nums.push(6) // append value
+  vec_nums.pop() // remove last value
+
+  for x in vec_nums.iter() {} // .iter(): iterable
+  for x in vec_nums.iter_mut() { // .iter_mut(): mutable iterable
+    *x = x * 2; // change the value of x | *x: dereference operator
+  }
 }
-// testing.rs
+
+// conditional.rs
+pub fn run() {
+  let age: u8 = 5;
+  let is_active: bool = false;
+  let is_admin: bool = false;
+  if age > 55 && is_active || is_admin {
+    println!("greater than 55 and active or admin")
+  } else if is_active{
+      println!("less than 55 and active")
+  } else {
+    println!("less than 55 and not active")
+  }
+
+  // ternary operator
+  let is_adult = if age > 21 { true } else { false };
+}
+
+// loops.rs
+pub fn run() {
+  let mut count: u8 = 0;
+
+  // infinite loop
+  loop {
+    count +=1;
+    println!("number: {}", count);
+
+    if count == 20 {
+      break; // stop loop
+    }
+  }
+
+  // while loop
+  while count <= 100 {
+    if count % 15 == 0 {
+      println!("fizzbuzz");
+    }
+
+    if count % 3 == 0 {
+      println!("fizz");
+    }
+
+    if count % 5 == 0 {
+      println!("buzz");
+    } else {
+      println!("{}", count);
+    }
+    count += 1;
+  }
+
+  // for loop
+  for x in 0..10 {
+    println!("number: {}", x);
+  }
+}
+
+// functions.rs
+pub fn run() {
+  greet("Hello", "John");
+
+  // bind function returned value to variable
+  let get_sum = sum(5,5);
+  println!("Sum: {}", get_sum);
+
+  // closure
+  let z: i8 = 55; // ouside var
+  let closure_sum = |x: i8, y: i8| x + y + z;
+  println!("Sum: {}", closure_sum(5, 5));
+}
+
+fn greet(greet: &str, name: &str) {
+  println!("{} {}, nice to meet you.", greet, name);
+}
+
+fn sum(x: i8, y: i8) -> i8 {
+  x + y // no semi-colon means return
+}
+
+// pointers.rs
+pub fn run() {
+  // points to a resource memory
+
+  // primitive array
+  let arr1 = [1,2,3];
+  let arr2 = arr1;
+  println!("{:?}", (arr1, arr2));
+
+  // vector
+  let vec1 = vec!([1,2,3]);
+  let vec2 = &vec1;
+  println!("{:?}", (&vec1, vec2));
+}
+
+
+// struct.rs
+pub fn run() {
+
+}
+
+
+
+
+  // testing.rs
 pub fn run() {
   assert_eq!("from", "to"); // asserts that two expressions are equal
 }
