@@ -50,8 +50,9 @@ pub fn run() {
 pub fn run() {
   let a; // immutable
   let mut b; // mutable
-  const ID:i32 = 55; // always immutable
+  const USER_ID:i32 = 55; // always immutable
   let (a, b) = ("John", 55) // assign multiple vars
+  let [a,b,c] = [1,2,3]; // same as above
 }
 
 // types.rs
@@ -239,8 +240,71 @@ pub fn run() {
 
 
 // struct.rs
-pub fn run() {
+struct Color {
+  // used to create custom data types
+  blue: i8,
+  yellow: f32,
+  red: String,
+}
 
+// tuple struct
+struct TupleColors(i8,i8,i8);
+
+
+struct Person {
+  first_name: String,
+  last_name: String,
+}
+
+impl Person { // similar to class
+  fn new(first: &str, last: &str) -> Person {
+    // struct Person
+    Person {
+      first_name: first.to_string(), // &str => String
+      last_name: last.to_string(),
+    }
+  }
+
+  // &self => Person
+  fn full_name(&self) -> String {
+    format!("{} {}", self.first_name, self.last_name)
+  }
+
+  // mutable Person
+  fn set_last_name(&mut self, last: &str) {
+    self.last_name = last.to_string();
+  }
+
+  // return as tuple
+  fn to_tuple(self) -> (String, String) {
+    (self.first_name, self.last_name)
+  }
+}
+
+
+pub fn run() {
+  let mut colors = Color {
+    blue: 8,
+    yellow: 2.0,
+    red: String::from("Red"),
+  }
+
+  colors.blue = 127;
+
+  println!("{:?}", (
+    colors.blue, // 127
+    colors.yellow, // 2.0
+    colors.red, // "Red"
+  ));
+
+  let c = TupleColors(1,2,3);
+  println!("{:?}", (c.0, c.1, c.2));
+
+  let mut p = Person::new("John", "Doe");
+  println!("Person: {} {}", p.first_name, p.last_name);
+  p.set_last_name("Smith");
+  println!("Person: {}", p.full_name());
+  println!("Person Tuple: {:?}", p.to_tuple());
 }
 
 
