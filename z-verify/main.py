@@ -66,6 +66,43 @@ print(3**2) # exponential
 # and, or, not
 a = True
 b = False
+
 print(a and b) # false
 print(a or b) # true
 print(not a) # false
+
+# if statement
+if age > 55:
+  print("old")
+elif age > 21:
+  print("adult")
+else
+  print("kid") # execute if above expressions fail
+
+# while loop
+while counter  < 5:
+  counter =+ 1
+  # code ...
+  break # stop loop and else:
+else:
+  # execute after while except if break calls then skip
+
+# for loop
+for task in tasks: # item in iterable
+  # code...
+
+for task in tasks:
+  # code...
+else:
+  # same as while else
+
+break # stop current loop
+continue # skip the rest of the code for the current iteration
+pass # construct body that does nothing
+
+
+# FUNCTION
+
+def my_func(params):
+  # code...
+  return
