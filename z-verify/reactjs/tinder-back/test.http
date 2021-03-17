@@ -1,0 +1,15 @@
+# http://localhost:8001/
+
+###
+
+# http://localhost:8001/tinder/cards
+
+###
+
+# POST http://localhost:8001/tinder/cards
+# content-type: application/json
+
+# {
+#   "name": "John Doe",
+#   "image": "https://picsum.photos/200"
+# }
