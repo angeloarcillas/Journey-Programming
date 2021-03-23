@@ -27,6 +27,7 @@ pub fn run() {
 }
 
 fn main() {
+  // init impl Person
   let mut person = Person::new("John", "Doe");
 
   // print first and last name of person
