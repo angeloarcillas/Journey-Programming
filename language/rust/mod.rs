@@ -9,6 +9,10 @@ mod my_module {
 // import module
 mod file;
 
+// change path
+#[path = "foo.rs"] // file
+mod c;
+
 fn main() {
   // call public function run from module
   my_module::run();
