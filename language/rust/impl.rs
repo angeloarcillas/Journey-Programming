@@ -25,3 +25,19 @@ pub fn run() {
     (self.first_name, self.last_name)
   }
 }
+
+fn main() {
+  let mut person = Person::new("John", "Doe");
+
+  // print first and last name of person
+  println!("Person: {} {}", person.first_name, person.last_name);
+
+  // change the last name of person
+  person.set_last_name("Smith");
+
+  // print the full name of person
+  println!("Person: {}", p.full_name());
+
+  // get tuple of person first and last name
+  println!("Person Tuple: {:?}", p.to_tuple());
+}
