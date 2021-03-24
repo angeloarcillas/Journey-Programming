@@ -1,4 +1,4 @@
-# basic math
+# ARITHMETIC OPERATOR
 addition = 5 + 55
 subtraction = 5 - 5
 multiplication = 5 * 5
@@ -18,3 +18,17 @@ a, b, c = 1, 2, 3
 
 # same value to multiple variable
 a = b = c = 5
+
+# COMPARISON OPERATOR
+greater_than = 6 > 5
+less_than = 6 < 5
+equal = 6 == 5
+not_equal = 6 != 5
+greater_than_or_equal = 6 >= 5
+less_than_or_equal = 6 <= 5
+
+# LOGICAL OPERATOR
+_and = True and True
+_or = True or False
+_not = not True
+_not2 = not ( True == True)
