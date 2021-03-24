@@ -13,6 +13,6 @@ sequence = range(0, 5)
 for x in sequence:
   print(x)
 
-break # stop the current loop
-continue # skip the rest of the current iteration then continue next iteration
-pass
+  break # stop the current loop
+  continue # skip the rest of the current iteration then continue next iteration
+  pass # construct body that does nothing (empty code block)
