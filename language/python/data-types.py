@@ -86,3 +86,28 @@ list2.pop(1) # pop at index 1
 
 # copy a list
 list_copy = list2.copy()
+
+# TUPLE: same as list but cannot change the elemets
+simple_tuple = (1,2,3)
+complex_tuple = (1,2,3, [4,5,6])
+
+# type()
+t1 = ('a') # string
+t1 = ('a',) # tuple
+t1 = 'a', # tuple (parentheses is optional)
+
+# slicing: same as list slicing
+t1[1:5]
+t1[-1]
+
+# delete: same as list delete
+del t1[2]
+
+# count tuple item occurence
+t1.count('a')
+
+# get index of item
+t1.index('a')
+
+# check if item exist in a tuple
+print('a' in t1)
