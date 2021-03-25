@@ -185,3 +185,29 @@ B = {2,3,4,5,6}
 
 union1 = A ^ B
 union2 = A.symmetric_difference(B)
+
+
+# dictionary: key:value pair
+dict1 = {'name': 'john', 'age': 44}
+dict2 = dict({'name': 'john', 'age': 44})
+
+# access an item
+print(dict1['name']) # john
+d_foo = dict1.get('name') # v2
+
+# add an item
+dict1['other'] = 'foobar'
+
+# update an item
+dict1['name'] = 'sam'
+
+# remove an item
+dict1.pop('name')
+dict1.popitem('name') # remove an arbitary item
+del dict1['name']
+
+# delete a dictionary
+del dict1
+
+# remove all items from a dictionary
+dict1.clear()
