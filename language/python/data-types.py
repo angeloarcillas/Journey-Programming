@@ -5,11 +5,27 @@ Last name: Doe
 Age: 55"""
 
 # string methods
-format()
-lower()
 
+# format a string
+"My name is {fname}, I'm {age}".format(fname = "John", age = 36)
 
+# to lowercase
+"John".lower()
 
+# to uppercase
+"John".upper()
+
+# tuple to string
+', '.join(('John', 'mike', 'lisa')) # john, mike, lisa
+
+# string to list
+"Hello World".split() # ['Hello', 'World']
+
+# find the index
+"Hello World".find('World') # 5
+
+# replace a string
+"Hello World".replace("Hello", "Hey") # Hey World
 
 
 # NUMBERS
@@ -119,3 +135,53 @@ t1.index('a')
 
 # check if item exist in a tuple
 print('a' in t1)
+
+
+# SETS
+s1 = {1,2,3}
+
+# add a set
+s1.add(4) # {1,2,3,4}
+
+# update a set
+s1.update([4,5,6]) # {1,2,3,4,5,6}
+
+# discard an item
+s1.discard(2) # {1,3}
+s1.remove(3) # same as discard but will throw an error if it doesnt exists
+
+# remove a random item
+s1.pop()
+
+# remove all items
+s1.clear()
+
+# misc
+
+# union
+A = {1,2,3}
+B = {2,3,4,5,6}
+
+union1 = A | B
+union2 = A.union(B)
+
+# intersection
+A = {1,2,3}
+B = {2,3,4,5,6}
+
+union1 = A & B
+union2 = A.intersection(B)
+
+# difference
+A = {1,2,3}
+B = {2,3,4,5,6}
+
+union1 = A - B
+union2 = A.difference(B)
+
+# symmentric difference
+A = {1,2,3}
+B = {2,3,4,5,6}
+
+union1 = A ^ B
+union2 = A.symmetric_difference(B)
