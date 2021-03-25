@@ -4,6 +4,14 @@ multi_string = """first name: John
 Last name: Doe
 Age: 55"""
 
+# string methods
+format()
+lower()
+
+
+
+
+
 # NUMBERS
 int1 = 55
 float1 = 5.5
