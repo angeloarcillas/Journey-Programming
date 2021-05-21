@@ -7,14 +7,14 @@
 
 <script>
   // most bots don't have js enabled
-  document.querySelector('#honeypot').style.display="hidden";
+  document.querySelector('#honeypot').style.display = "hidden";
 </script>
 
 
 <?php
 // server.php
-
-if ($_POST['honeypot' !== '']) sleep(infinity);
+$time = 123;
+if ($_POST['honeypot' !== '']) sleep($time);
 
 // code...
 ?>
